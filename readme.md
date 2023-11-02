@@ -281,6 +281,8 @@ Update-Help
 
 
 <!-- ##################################################### -->
+
+<!-- 
 # TO DO
 * Install Docker
 * Install Poshgit
@@ -312,5 +314,6 @@ Update-Help
 
       # [font.normal]
       # family = "MesloLGM Nerd Font"
-      ```
+      ``` 
+-->
 
