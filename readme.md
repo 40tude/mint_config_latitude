@@ -1,10 +1,10 @@
 # Installation
 * Boot sur clé USB
 * Passer en clavier FR
-* gparted pour supprimer toutes les partitions
+* `gparted` pour supprimer toutes les partitions
 * Installation de mint
 * Reboot
-* Utiliser Firefox et lire https://github.com/40tude/mint_config_latitude
+* Read: https://github.com/40tude/mint_config_latitude
 
 <!-- ##################################################### -->
 # Update & upgrade
@@ -29,7 +29,7 @@ dpkg-reconfigure --priority=low unattended-upgrades
 <!-- ##################################################### -->
 # Enable hibernation
 
-* https://forums.linuxmint.com/viewtopic.php?t=284100
+* Read : https://forums.linuxmint.com/viewtopic.php?t=284100
 
 
 ```
@@ -60,7 +60,7 @@ EOB
 ```
 
 * Reboot
-* The answer to the line below should be `yes` (or click "the red button, hibernate should be available" )
+* The answer to the line below should be `yes` (or click "the red button", `hibernate` should be available)
 
 ```
 busctl call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager CanHibernate
@@ -143,8 +143,7 @@ sudo ufw status verbose # si besoin
 
 <!-- ##################################################### -->
 # Configure TimeShift
-* voir : https://www.youtube.com/watch?v=HKCowLHiQ8o&list=WL&index=8
-* à 13:28
+* Watch : https://youtu.be/HKCowLHiQ8o?si=4mzAjuonjO3upx9p&t=775
 
 
 <!-- ##################################################### -->
@@ -152,7 +151,9 @@ sudo ufw status verbose # si besoin
 ```
 sudo apt install dirmngr ca-certificates software-properties-common apt-transport-https -y
 curl -fSsL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor | sudo tee /usr/share/keyrings/vscode.gpg > /dev/null
+
 echo deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.microsoft.com/repos/vscode stable main | sudo tee /etc/apt/sources.list.d/vscode.list
+
 sudo apt update
 sudo apt install code
 ```
@@ -164,8 +165,10 @@ sudo apt install code
 ```
 # installez la clé de signature de package
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+
 # ajouter le référentiel Chrome 
 sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
+
 sudo apt update
 sudo apt install google-chrome-stable -y
 ```
@@ -184,10 +187,10 @@ git config --list
 
 
 <!-- ##################################################### -->
-## Enable SSH (pour se connecter à github sans VSCode)
-* Voir : https://youtu.be/3O4ZmH5aolg?si=OVWCEeq_0nj-UExM&t=359
-* Aller dans $HOME
+## Enable SSH (to connect to github without VSCode)
+
 ```
+cd ~
 mkdir .ssh
 cd .ssh
 ssh-keygen # Enter à chaque question posée
@@ -202,14 +205,8 @@ cat id_rsa.pub
 * Click bouton New SSH Key
 * Coller la clé publique
 
+* Voir : https://youtu.be/3O4ZmH5aolg?si=OVWCEeq_0nj-UExM&t=359
 
-
-
-
-
-<!-- ##################################################### -->
-# Curseur
-* Thèmes/Para avancés/Souris/Yaru
 
 
 <!-- ##################################################### -->
@@ -238,7 +235,7 @@ mv ./Téléchargements/Meslo ./.local/share/fonts
 fc-cache -fv
 ```
 
-## Lister les polices installées
+## List available fonts
 ```
 fc-list
 fc-list | grep Meslo
@@ -248,12 +245,33 @@ fc-match -s Arial
 
 
 <!-- ##################################################### -->
-# Parce que je m'en rappelle jamais
+# Install PowerShell
+```
+sudo apt install dirmngr ca-certificates software-properties-common gnupg gnupg2 apt-transport-https curl -y
 
-## Créer un lien symbolique
+curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/powershell.gpg > /dev/null
+
+echo deb [arch=amd64,armhf,arm64 signed-by=/usr/share/keyrings/powershell.gpg] https://packages.microsoft.com/ubuntu/22.04/prod/ jammy main | sudo tee /etc/apt/sources.list.d/powershell.list
+
+sudo apt update
+sudo apt install powershell -y
+
+pwsh
+Update-Help
+```
+
+
+
+<!-- ##################################################### -->
+# Because I can't remember
+
+## Change Cursor
+* Thèmes/Para avancés/Souris/Yaru
+
+## Create symbolic link
 * ln -s /home/share/installation.md ln_installation.md
 
-## Changer le nom du PC
+## Change the name of the host
 * Editer en root /etc/hostname
 
 
@@ -263,51 +281,36 @@ fc-match -s Arial
 
 
 <!-- ##################################################### -->
-# À finir
-* VSCode
-* Docker
+# TO DO
+* Install Docker
+* Install Poshgit
+  * https://ohmyposh.dev/docs/installation/linux
+  * curl -s https://ohmyposh.dev/install.sh | sudo bash -s
+  * Configurer Alacritty pour utiliser Meslo
 
-## Poshgit
-* https://ohmyposh.dev/docs/installation/linux
-* curl -s https://ohmyposh.dev/install.sh | sudo bash -s
-* Configurer Alacritty pour utiliser Meslo
+* Modern Linux : https://github.com/ibraheemdev/modern-unix
+  * zfish (bash) : https://azlinux.fr/installer-fish-shell/
+  * exa (ls) apt install -y exa
+  * bat (cat) apt install -y exa https://www.linode.com/docs/guides/how-to-install-and-use-the-bat-command-on-linux/
+  * ripgrep (rg, grep) apt install -y ripgrep
+  * Alacritty (terminal)
+    * Configuration Alacritty
+      * Nov 2023 - Je suis en version 0.13.0-dev
+      * Le fichier .toml n''est pas pris en compte
+      * Le fichier .yml est pris en compte
+      * mkdir -p ~/.config/alacritty/
+      * /home/philippe/.config/alacritty/alacritty.toml
+      * /home/philippe/.config/alacritty/alacritty.yml
+    * Lire : 
+    * https://github.com/tmcdonell/config-alacritty/blob/master/alacritty.yml
+    * https://github.com/alacritty/alacritty/blob/master/extra/man/alacritty.5.scd
+    * https://github.com/alacritty/alacritty-theme
+    * Exemple de fichier .toml
+      ```
+      [font]
+      size = 16.0
 
-## Visiter
-* https://github.com/ibraheemdev/modern-unix
-
-* zfish (bash) : https://azlinux.fr/installer-fish-shell/
-* exa (ls) apt install -y exa
-* bat (cat) apt install -y exa https://www.linode.com/docs/guides/how-to-install-and-use-the-bat-command-on-linux/
-* ripgrep (rg, grep) apt install -y ripgrep
-* Alacritty (terminal)
-
-
-# Configuration Alacritty
-Je suis en version 0.13.0-dev
-
-Le fichier .toml n''est pas pris en compte
-Le fichier .yml est pris en compte
-mkdir -p ~/.config/alacritty/
-/home/philippe/.config/alacritty/alacritty.toml
-/home/philippe/.config/alacritty/alacritty.yml
-
-Lire : 
-* https://github.com/tmcdonell/config-alacritty/blob/master/alacritty.yml
-* https://github.com/alacritty/alacritty/blob/master/extra/man/alacritty.5.scd
-* https://github.com/alacritty/alacritty-theme
-
-
-## Exemple de fichier .toml
-```
-[font]
-size = 16.0
-
-# [font.normal]
-# family = "MesloLGM Nerd Font"
-```
-
-
-```
-##################################################################
-```
+      # [font.normal]
+      # family = "MesloLGM Nerd Font"
+      ```
 
