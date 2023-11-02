@@ -66,6 +66,14 @@ EOB
 busctl call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager CanHibernate
 ```
 
+
+<!-- ##################################################### -->
+# Configure TimeShift
+* Watch : https://youtu.be/HKCowLHiQ8o?si=4mzAjuonjO3upx9p&t=775
+
+
+
+
 <!-- ##################################################### -->
 # Share a public folder with Windows 
 
@@ -138,44 +146,6 @@ sudo ufw reload
 sudo ufw status verbose # si besoin
 ```
 
-
-
-
-<!-- ##################################################### -->
-# Configure TimeShift
-* Watch : https://youtu.be/HKCowLHiQ8o?si=4mzAjuonjO3upx9p&t=775
-
-
-<!-- ##################################################### -->
-# Install VSCode
-```
-sudo apt install dirmngr ca-certificates software-properties-common apt-transport-https -y
-
-curl -fSsL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor | sudo tee /usr/share/keyrings/vscode.gpg > /dev/null
-
-echo deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.microsoft.com/repos/vscode stable main | sudo tee /etc/apt/sources.list.d/vscode.list
-
-sudo apt update
-sudo apt install code
-```
-
-<!-- ##################################################### -->
-# Install Chrome
-* S'assurer que le gestionnaire synaptic n'est PAS ouvert
-
-```
-# installez la clé de signature de package
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-
-# ajouter le référentiel Chrome 
-sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
-
-sudo apt update
-sudo apt install google-chrome-stable -y
-```
-
-
-
 <!-- ##################################################### -->
 # Install Git
 
@@ -239,6 +209,51 @@ exec bash
 ```
 
 * Read : https://ohmyposh.dev/docs/installation/linux
+
+
+
+
+
+
+
+
+
+<!-- ##################################################### -->
+# Install VSCode
+```
+sudo apt install dirmngr ca-certificates software-properties-common apt-transport-https -y
+
+curl -fSsL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor | sudo tee /usr/share/keyrings/vscode.gpg > /dev/null
+
+echo deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.microsoft.com/repos/vscode stable main | sudo tee /etc/apt/sources.list.d/vscode.list
+
+sudo apt update
+sudo apt install code
+```
+* If Oh my Posh is installed
+  * Open a Terminal
+  * Select Configure Terminal Settings in the drop down list (close to the +)
+  * Search for "font"
+  * In the Terminal > Integrated > Font Family field, type MesloLGM Nerd Font
+
+
+<!-- ##################################################### -->
+# Install Chrome
+* S'assurer que le gestionnaire synaptic n'est PAS ouvert
+
+```
+# installez la clé de signature de package
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+
+# ajouter le référentiel Chrome 
+sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
+
+sudo apt update
+sudo apt install google-chrome-stable -y
+```
+
+
+
 
 
 <!-- ##################################################### -->
