@@ -234,7 +234,7 @@ sudo apt install code
   * Open a Terminal
   * Select Configure Terminal Settings in the drop down list (close to the +)
   * Search for "font"
-  * In the Terminal > Integrated > Font Family field, type MesloLGM Nerd Font
+  * In the Terminal > Integrated > Font Family field, type `MesloLGM Nerd Font`
 
 
 <!-- ##################################################### -->
