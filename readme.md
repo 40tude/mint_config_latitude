@@ -152,9 +152,17 @@ sudo apt install google-chrome-stable -y
 
 
 # Installer Git
-Voir : https://youtu.be/3O4ZmH5aolg?si=OVWCEeq_0nj-UExM&t=359
 
-## SSH
+```
+sudo apt install git -y
+git config --global user.name "MON NOM" # avec les guillemets
+git config --global user.email xxx@gmail.com
+git config --list
+```
+
+* Voir : https://youtu.be/3O4ZmH5aolg?si=OVWCEeq_0nj-UExM&t=359
+
+## SSH (pour se connecter à github sans VSCode)
 * Aller dans $HOME
 ```
 mkdir .ssh
@@ -184,12 +192,7 @@ venv/
 ```
 
 
-```
-sudo apt install git -y
-git config --global user.name "MON NOM" # avec les guillemets
-git config --global user.email xxx@gmail.com
-git config --list
-```
+
 
 
 
