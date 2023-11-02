@@ -227,14 +227,15 @@ sudo apt install ttf-mscorefonts-installer
 * Restent plus que des fichiers ttf
 * Copier le répertoire Meslo dans home/.local/share/fonts
 * Reconstruire le cache des fonts
-* Lire : https://www.baeldung.com/linux/install-multiple-fonts
 
 ```
 mkdir -p ~/.local/share/fonts
 mv ./Téléchargements/Meslo ./.local/share/fonts
 fc-cache -fv
 ```
+* Lire : https://www.baeldung.com/linux/install-multiple-fonts
 
+  
 ## List available fonts
 ```
 fc-list
