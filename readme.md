@@ -197,11 +197,11 @@ ssh-keygen # Enter à chaque question posée
 cat id_rsa.pub
 ```
 
-* Copier la sortie de cat
+* Copier la sortie de `cat`
 * Aller sur github pour ajouter la clé publique au compte
-* Cliquer profil en haut à droite
+* Cliquer sur profil en haut à droite
 * Settings dans la liste
-* A gauche de la page chercher SSH & GPG
+* À gauche de la page chercher SSH & GPG
 * Click bouton New SSH Key
 * Coller la clé publique
 
