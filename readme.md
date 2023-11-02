@@ -186,6 +186,60 @@ git config --global user.email xxx@gmail.com
 git config --list
 ```
 
+<!-- ##################################################### -->
+# Install Meslo Fonts
+
+* Aller sur : https://www.nerdfonts.com/font-downloads
+* Recupérer Meslo
+* Décompresser fichier zip
+* Un répertoire Meslo est créé
+* Enlever le readme.txt et le fichier licence.txt du répertoire
+* Restent plus que des fichiers ttf
+* Copier le répertoire Meslo dans home/.local/share/fonts
+* Reconstruire le cache des fonts
+
+```
+mkdir -p ~/.local/share/fonts
+mv ./Téléchargements/Meslo ./.local/share/fonts
+fc-cache -fv
+```
+* Lire : https://www.baeldung.com/linux/install-multiple-fonts
+
+
+
+<!-- ##################################################### -->
+# Install Oh My Posh
+
+```
+curl -s https://ohmyposh.dev/install.sh | sudo bash -s
+```
+
+* Update terminal preferences and use `MesloLGM Nerd Font`
+* Not specific to the font :
+  * Font size = 11
+  * Windows size = 144 x 44 
+
+```
+oh-my-posh get shell
+```
+
+* The instructions here are specific to bash
+* Edit ~/.bashrc
+* Add, at the very end
+
+```
+eval "$(oh-my-posh init bash)"
+```
+
+* Save & Close
+* Reload the profile
+
+```
+exec bash
+```
+
+* Read : https://ohmyposh.dev/docs/installation/linux
+
 
 <!-- ##################################################### -->
 ## Enable SSH (to connect to github without VSCode)
@@ -210,40 +264,6 @@ cat id_rsa.pub
 
 
 
-<!-- ##################################################### -->
-# Install MS Fonts
-```
-sudo apt install ttf-mscorefonts-installer
-```
-
-
-<!-- ##################################################### -->
-# Install Meslo Fonts
-
-* Aller sur : https://www.nerdfonts.com/font-downloads
-* Recupérer Meslo
-* Décompresser fichier zip
-* Un répertoire Meslo est créé
-* Enlever le readme.txt et le fichier licence.txt du répertoire
-* Restent plus que des fichiers ttf
-* Copier le répertoire Meslo dans home/.local/share/fonts
-* Reconstruire le cache des fonts
-
-```
-mkdir -p ~/.local/share/fonts
-mv ./Téléchargements/Meslo ./.local/share/fonts
-fc-cache -fv
-```
-* Lire : https://www.baeldung.com/linux/install-multiple-fonts
-
-  
-## List available fonts
-```
-fc-list
-fc-list | grep Meslo
-fc-list : family style | grep Meslo
-fc-match -s Arial
-```
 
 
 <!-- ##################################################### -->
@@ -265,10 +285,42 @@ Update-Help
 
 
 <!-- ##################################################### -->
+# Install Docker
+
+```
+sudo apt install docker docker-compose docker-doc docker-registry docker.io -y
+sudo usermod -aG docker $USER
+docker --help
+```
+
+
+
+
+
+<!-- ##################################################### -->
+# Install MS Fonts
+```
+sudo apt install ttf-mscorefonts-installer
+```
+
+
+  
+## List available fonts
+```
+fc-list
+fc-list | grep Meslo
+fc-list : family style | grep Meslo
+fc-match -s Arial
+```
+
+
+
+
+<!-- ##################################################### -->
 # Because I can't remember
 
 ## Change Cursor
-* Thèmes/Para avancés/Souris/Yaru
+* Thèmes/Para avancés.../Souris/Yaru
 
 ## Create symbolic link
 * ln -s /home/share/installation.md ln_installation.md
@@ -279,18 +331,11 @@ Update-Help
 
 
 
-
-
-
 <!-- ##################################################### -->
 
 <!-- 
 # TO DO
-* Install Docker
-* Install Poshgit
-  * https://ohmyposh.dev/docs/installation/linux
-  * curl -s https://ohmyposh.dev/install.sh | sudo bash -s
-  * Configurer Alacritty pour utiliser Meslo
+
 
 * Modern Linux : https://github.com/ibraheemdev/modern-unix
   * zfish (bash) : https://azlinux.fr/installer-fish-shell/
@@ -299,6 +344,7 @@ Update-Help
   * ripgrep (rg, grep) apt install -y ripgrep
   * Alacritty (terminal)
     * Configuration Alacritty
+      * Configurer Alacritty pour utiliser Meslo
       * Nov 2023 - Je suis en version 0.13.0-dev
       * Le fichier .toml n''est pas pris en compte
       * Le fichier .yml est pris en compte
