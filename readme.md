@@ -6,8 +6,8 @@
 * Reboot
 * Utiliser Firefox et lire https://github.com/40tude/mint_config_latitude
 
-
-# Mettre à jour
+<!-- ##################################################### -->
+# Update & upgrade
 
 ```
 sudo apt update
@@ -15,12 +15,18 @@ sudo apt dist-upgrade
 sudo apt upgrade
 ```
 
+
+<!-- ##################################################### -->
 # Enable automatic update
 ```
 sudo apt install unattended-upgrades
 dpkg-reconfigure --priority=low unattended-upgrades
 ```
 
+
+
+
+<!-- ##################################################### -->
 # Enable hibernation
 
 * https://forums.linuxmint.com/viewtopic.php?t=284100
@@ -54,14 +60,14 @@ EOB
 ```
 
 * Reboot
-* The answer to the line below should be yes (or click "the red button, hibernate should be available" )
+* The answer to the line below should be `yes` (or click "the red button, hibernate should be available" )
 
 ```
 busctl call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager CanHibernate
 ```
 
-
-# Share public folder with Windows 
+<!-- ##################################################### -->
+# Share a public folder with Windows 
 
 * Read : https://techviewleo.com/configure-samba-file-sharing-on-linux-mint/
 
@@ -111,6 +117,7 @@ sudo ufw allow samba
 
 
 
+<!-- ##################################################### -->
 # Enable SSH
 ```
 sudo apt install openssh-server -y
@@ -132,12 +139,21 @@ sudo ufw status verbose # si besoin
 ```
 
 
+
+
+<!-- ##################################################### -->
 # Configure TimeShift
 * voir : https://www.youtube.com/watch?v=HKCowLHiQ8o&list=WL&index=8
 * à 13:28
 
 
-# Installer Chrome
+<!-- ##################################################### -->
+# Install VSCode
+
+
+
+<!-- ##################################################### -->
+# Install Chrome
 * S'assurer que le gestionnaire synaptic n'est PAS ouvert
 
 ```
@@ -151,18 +167,20 @@ sudo apt install google-chrome-stable -y
 
 
 
-# Installer Git
+<!-- ##################################################### -->
+# Install Git
 
 ```
 sudo apt install git -y
-git config --global user.name "MON NOM" # avec les guillemets
+git config --global user.name "MON NOM"            # avec les guillemets
 git config --global user.email xxx@gmail.com
 git config --list
 ```
 
-* Voir : https://youtu.be/3O4ZmH5aolg?si=OVWCEeq_0nj-UExM&t=359
 
-## SSH (pour se connecter à github sans VSCode)
+<!-- ##################################################### -->
+## Enable SSH (pour se connecter à github sans VSCode)
+* Voir : https://youtu.be/3O4ZmH5aolg?si=OVWCEeq_0nj-UExM&t=359
 * Aller dans $HOME
 ```
 mkdir .ssh
@@ -176,36 +194,27 @@ cat id_rsa.pub
 * Cliquer profil en haut à droite
 * Settings dans la liste
 * A gauche de la page chercher SSH & GPG
-* Clic bouton New SSH Key
+* Click bouton New SSH Key
 * Coller la clé publique
 
-```
-touch .gitignore
-nano .gitignore
-```
-
-* Ajouter les lignes 
-```
-.gitignore
-# ignore le répertoire venv si y en a un
-venv/
-```
 
 
 
 
 
-
+<!-- ##################################################### -->
 # Curseur
 * Thèmes/Para avancés/Souris/Yaru
 
 
+<!-- ##################################################### -->
 # Install MS Fonts
 ```
 sudo apt install ttf-mscorefonts-installer
 ```
 
 
+<!-- ##################################################### -->
 # Install Meslo Fonts
 
 * Aller sur : https://www.nerdfonts.com/font-downloads
@@ -233,6 +242,7 @@ fc-match -s Arial
 ```
 
 
+<!-- ##################################################### -->
 # Parce que je m'en rappelle jamais
 
 ## Créer un lien symbolique
@@ -247,9 +257,7 @@ fc-match -s Arial
 
 
 
-```
-##################################################################
-```
+<!-- ##################################################### -->
 # À finir
 * VSCode
 * Docker
