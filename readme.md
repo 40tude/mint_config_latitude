@@ -1,9 +1,13 @@
-# Réinstallation
-* boot sur clé USB
-* passer en clavier FR
+# Installation
+* Boot sur clé USB
+* Passer en clavier FR
 * gparted pour supprimer toutes les partitions
-* installation de mint
-* après reboot
+* Installation de mint
+* Reboot
+* Utiliser Firefox et lire https://github.com/40tude/mint_config_latitude
+
+
+# Mettre à jour
 
 ```
 sudo apt update
@@ -23,8 +27,8 @@ dpkg-reconfigure --priority=low unattended-upgrades
 
 
 ```
-free -h # noter la taille de la RAM
-swapon                                  # faut que swap = RAM
+free -h                                 # noter la taille de la RAM
+swapon                                  # faut swap = RAM
 sudo swapoff -a
 
 SIZE=16                                 # 16 MB
@@ -49,8 +53,9 @@ ResultActive=yes
 EOB
 ```
 
-Reboot
-The answer to the line below should be yes (or click "the red button, hibernate should be available" )
+* Reboot
+* The answer to the line below should be yes (or click "the red button, hibernate should be available" )
+
 ```
 busctl call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager CanHibernate
 ```
@@ -132,7 +137,6 @@ sudo ufw status verbose # si besoin
 * à 13:28
 
 
-
 # Installer Chrome
 * S'assurer que le gestionnaire synaptic n'est PAS ouvert
 
@@ -144,6 +148,7 @@ sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
 sudo apt update
 sudo apt install google-chrome-stable -y
 ```
+
 
 
 # Installer Git
@@ -202,7 +207,7 @@ sudo apt install ttf-mscorefonts-installer
 
 * Aller sur : https://www.nerdfonts.com/font-downloads
 * Recupérer Meslo
-* Décompresser fichier
+* Décompresser fichier zip
 * Un répertoire Meslo est créé
 * Enlever le readme.txt et le fichier licence.txt du répertoire
 * Restent plus que des fichiers ttf
@@ -225,7 +230,7 @@ fc-match -s Arial
 ```
 
 
-# Je me rappelle jamais
+# Parce que je m'en rappelle jamais
 
 ## Créer un lien symbolique
 * ln -s /home/share/installation.md ln_installation.md
