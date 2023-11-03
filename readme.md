@@ -373,7 +373,9 @@ apt install -y bat
 
 mkdir -p ~/.local/bin
 ln -s /usr/bin/batcat ~/.local/bin/bat
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+https://github.com/sharkdp/bat
 https://www.linode.com/docs/guides/how-to-install-and-use-the-bat-command-on-linux/
 
 
@@ -382,8 +384,18 @@ https://www.linode.com/docs/guides/how-to-install-and-use-the-bat-command-on-lin
 
 # TO DO
 * Modern Linux : https://github.com/ibraheemdev/modern-unix
+du -> dust : https://github.com/ibraheemdev/modern-unix
+df -> duf : https://github.com/muesli/duf
+find -> fd : https://github.com/sharkdp/fd
+grep -> ripgrep : https://github.com/BurntSushi/ripgrep
+top -> bottom : https://github.com/ClementTsang/bottom
+top -> glances : https://github.com/nicolargo/glances
+ps -> procs : https://github.com/dalance/procs
+...
+
   * zfish (bash) : https://azlinux.fr/installer-fish-shell/
   * ripgrep (rg, grep) apt install -y ripgrep
+  
   * Alacritty (terminal)
     * Configuration Alacritty
       * Configurer Alacritty pour utiliser Meslo
