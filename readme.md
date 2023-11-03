@@ -161,18 +161,23 @@ git config --list
 
 * Aller sur : https://www.nerdfonts.com/font-downloads
 * Recupérer Meslo
-* Décompresser fichier zip
-* Un répertoire Meslo est créé
-* Enlever le readme.txt et le fichier licence.txt du répertoire
-* Restent plus que des fichiers ttf
-* Copier le répertoire Meslo dans home/.local/share/fonts
+* Décompresser le zip dans un répertoire Meslo
+* Supprimer le readme.md et le fichier LICENSES.txt du répertoire
+* Créer un répertoire ~/.local/share/fonts
+* Y copier le répertoire Meslo 
 * Reconstruire le cache des fonts
 
 ```
+# Si Meslo.zip est dans ~/Téléchargements
+cd ~/Téléchargements
+unzip Meslo.zip -d ./Meslo
+rm ./Meslo/LICENCE.txt
+rm ./Meslo/readme.md
 mkdir -p ~/.local/share/fonts
-mv ./Téléchargements/Meslo ./.local/share/fonts
+mv ./Téléchargements/Meslo ~/.local/share/fonts
 fc-cache -fv
 ```
+
 * Lire : https://www.baeldung.com/linux/install-multiple-fonts
 
 
@@ -257,7 +262,7 @@ sudo apt install google-chrome-stable -y
 
 
 <!-- ##################################################### -->
-## Enable SSH (to connect to github without VSCode)
+# Enable SSH 
 
 ```
 cd ~
@@ -267,8 +272,9 @@ ssh-keygen # Enter à chaque question posée
 cat id_rsa.pub
 ```
 
-* Copier la sortie de `cat`
-* Aller sur github pour ajouter la clé publique au compte
+## Connect to GitHub with ssh 
+* Copier la sortie du `cat` précédent
+* Aller sur GitHub pour ajouter la clé publique au compte
 * Cliquer sur profil en haut à droite
 * Settings dans la liste
 * À gauche de la page chercher SSH & GPG
