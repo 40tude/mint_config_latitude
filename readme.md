@@ -355,13 +355,34 @@ fc-match -s Arial
 <!-- ##################################################### -->
 
 <!-- 
+eza
+
+sudo mkdir -p /etc/apt/keyrings
+wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
+echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
+sudo apt update
+sudo apt install eza
+
+https://linuxiac.com/eza-command-listing-files-in-linux/
+
+
+bat 
+apt install -y bat 
+
+mkdir -p ~/.local/bin
+ln -s /usr/bin/batcat ~/.local/bin/bat
+
+https://www.linode.com/docs/guides/how-to-install-and-use-the-bat-command-on-linux/
+
+
+
 # TO DO
 
 
 * Modern Linux : https://github.com/ibraheemdev/modern-unix
   * zfish (bash) : https://azlinux.fr/installer-fish-shell/
   * exa (ls) apt install -y exa
-  * bat (cat) apt install -y exa https://www.linode.com/docs/guides/how-to-install-and-use-the-bat-command-on-linux/
+  * 
   * ripgrep (rg, grep) apt install -y ripgrep
   * Alacritty (terminal)
     * Configuration Alacritty
