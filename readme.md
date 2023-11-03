@@ -336,6 +336,52 @@ fc-match -s Arial
 
 
 
+<!-- ##################################################### -->
+# Modern Linux
+
+* https://www.oreilly.com/library/view/learning-modern-linux/9781098108939/
+
+
+## ls -> eza
+
+```
+sudo mkdir -p /etc/apt/keyrings
+wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
+echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
+sudo apt update
+sudo apt install eza
+```
+* https://github.com/eza-community/eza
+* https://linuxiac.com/eza-command-listing-files-in-linux/
+
+
+
+## cat -> bat 
+
+```
+apt install bat -y 
+
+mkdir -p ~/.local/bin
+ln -s /usr/bin/batcat ~/.local/bin/bat
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+```
+
+* https://github.com/sharkdp/bat
+* https://www.linode.com/docs/guides/how-to-install-and-use-the-bat-command-on-linux/
+
+## Others
+
+* du -> dust : https://github.com/ibraheemdev/modern-unix
+* df -> duf : https://github.com/muesli/duf
+* find -> fd : https://github.com/sharkdp/fd
+* grep -> ripgrep : https://github.com/BurntSushi/ripgrep
+* top -> bottom : https://github.com/ClementTsang/bottom
+* top -> glances : https://github.com/nicolargo/glances
+* ps -> procs : https://github.com/dalance/procs
+
+More
+* https://github.com/ibraheemdev/modern-unix
+
 
 <!-- ##################################################### -->
 # Because I can't remember
@@ -355,66 +401,32 @@ fc-match -s Arial
 <!-- ##################################################### -->
 
 <!-- 
-eza
-
-sudo mkdir -p /etc/apt/keyrings
-wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
-echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
-sudo apt update
-sudo apt install eza
-
-https://linuxiac.com/eza-command-listing-files-in-linux/
 
 
 
 
-bat 
-apt install -y bat 
+* zfish (bash) : https://azlinux.fr/installer-fish-shell/
+* ripgrep (rg, grep) apt install -y ripgrep
 
-mkdir -p ~/.local/bin
-ln -s /usr/bin/batcat ~/.local/bin/bat
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
-https://github.com/sharkdp/bat
-https://www.linode.com/docs/guides/how-to-install-and-use-the-bat-command-on-linux/
-
-
-
-
-
-# TO DO
-* Modern Linux : https://github.com/ibraheemdev/modern-unix
-du -> dust : https://github.com/ibraheemdev/modern-unix
-df -> duf : https://github.com/muesli/duf
-find -> fd : https://github.com/sharkdp/fd
-grep -> ripgrep : https://github.com/BurntSushi/ripgrep
-top -> bottom : https://github.com/ClementTsang/bottom
-top -> glances : https://github.com/nicolargo/glances
-ps -> procs : https://github.com/dalance/procs
-...
-
-  * zfish (bash) : https://azlinux.fr/installer-fish-shell/
-  * ripgrep (rg, grep) apt install -y ripgrep
-  
-  * Alacritty (terminal)
-    * Configuration Alacritty
-      * Configurer Alacritty pour utiliser Meslo
-      * Nov 2023 - Je suis en version 0.13.0-dev
-      * Le fichier .toml n''est pas pris en compte
-      * Le fichier .yml est pris en compte
-      * mkdir -p ~/.config/alacritty/
-      * /home/philippe/.config/alacritty/alacritty.toml
-      * /home/philippe/.config/alacritty/alacritty.yml
-    * Lire : 
-    * https://github.com/tmcdonell/config-alacritty/blob/master/alacritty.yml
-    * https://github.com/alacritty/alacritty/blob/master/extra/man/alacritty.5.scd
-    * https://github.com/alacritty/alacritty-theme
-    * Exemple de fichier .toml
-      ```
-      [font]
-      size = 16.0
-      # [font.normal]
-      # family = "MesloLGM Nerd Font"
+* Alacritty (terminal)
+  * Configuration Alacritty
+    * Configurer Alacritty pour utiliser Meslo
+    * Nov 2023 - Je suis en version 0.13.0-dev
+    * Le fichier .toml n''est pas pris en compte
+    * Le fichier .yml est pris en compte
+    * mkdir -p ~/.config/alacritty/
+    * /home/philippe/.config/alacritty/alacritty.toml
+    * /home/philippe/.config/alacritty/alacritty.yml
+  * Lire : 
+  * https://github.com/tmcdonell/config-alacritty/blob/master/alacritty.yml
+  * https://github.com/alacritty/alacritty/blob/master/extra/man/alacritty.5.scd
+  * https://github.com/alacritty/alacritty-theme
+  * Exemple de fichier .toml
+    ```
+    [font]
+    size = 16.0
+    # [font.normal]
+    # family = "MesloLGM Nerd Font"
       ``` 
 -->
 
