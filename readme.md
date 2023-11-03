@@ -366,6 +366,8 @@ sudo apt install eza
 https://linuxiac.com/eza-command-listing-files-in-linux/
 
 
+
+
 bat 
 apt install -y bat 
 
@@ -376,13 +378,11 @@ https://www.linode.com/docs/guides/how-to-install-and-use-the-bat-command-on-lin
 
 
 
+
+
 # TO DO
-
-
 * Modern Linux : https://github.com/ibraheemdev/modern-unix
   * zfish (bash) : https://azlinux.fr/installer-fish-shell/
-  * exa (ls) apt install -y exa
-  * 
   * ripgrep (rg, grep) apt install -y ripgrep
   * Alacritty (terminal)
     * Configuration Alacritty
@@ -401,7 +401,6 @@ https://www.linode.com/docs/guides/how-to-install-and-use-the-bat-command-on-lin
       ```
       [font]
       size = 16.0
-
       # [font.normal]
       # family = "MesloLGM Nerd Font"
       ``` 
