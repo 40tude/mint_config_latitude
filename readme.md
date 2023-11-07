@@ -363,7 +363,7 @@ apt install bat -y
 
 mkdir -p ~/.local/bin
 ln -s /usr/bin/batcat ~/.local/bin/bat
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"  # once satisfied, add the line to ~/.bashrc
 ```
 
 * https://github.com/sharkdp/bat
