@@ -370,10 +370,11 @@ conda activate base
 conda remove --name env1 --all 
 ```
 
-* If the display of the current conda virtual env does'nt fit the Oh my Posh prompt
-...  
+* If the display of the current conda virtual env does'nt fit the Oh my Posh prompt try this or modify the theme.
+
+```  
 conda config --set changeps1 False 
-...
+```
 
 
 <!-- ##################################################### -->
