@@ -336,6 +336,46 @@ fc-match -s Arial
 
 
 
+
+<!-- ##################################################### -->
+# Install Anaconda
+
+* https://www.anaconda.com/download
+
+```
+bash Anaconda3-2023.09-0-Linux-x86_64.sh 
+```
+* Read the licence and answer yes few times
+* Close and reopen a terminal
+* Update conda
+* Make sure everythings works
+
+```
+conda update conda
+conda update -n base --all
+conda info --envs  
+conda list 
+anaconda-navigator 
+```
+
+* Don't use base virtual environment. Use your own
+
+```
+conda create --name env1 python=3.11.5
+conda activate env1 
+...
+conda update -n env1 --all 
+... 
+conda activate base
+conda remove --name env1 --all 
+```
+
+* If the display of the current conda virtual env does'nt fit the Oh my Posh prompt
+...  
+conda config --set changeps1 False 
+...
+
+
 <!-- ##################################################### -->
 # Modern Linux
 
