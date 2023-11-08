@@ -451,8 +451,10 @@ More
 ## Change Cursor
 * Thèmes/Para avancés.../Souris/Yaru
 
-## Create symbolic link
-* ln -s /home/share/installation.md ln_installation.md
+## Symbolic link
+* Avoid relative path
+* ln -s /home/share/installation.md ln_installation.md           # create link in current dir
+* ln -s /home/share/mydoc.md /home/philippe/Bureau/ln_mydoc.md   # create link on the desktop
 
 ## Change the name of the host
 * Editer en root /etc/hostname
