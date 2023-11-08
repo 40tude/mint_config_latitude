@@ -345,8 +345,9 @@ fc-match -s Arial
 ```
 bash Anaconda3-2023.09-0-Linux-x86_64.sh 
 ```
-* Read the licence and answer yes few times
-* Close and reopen a terminal
+
+* Read the licence and answer "yes" few times
+* Close and reopen the terminal
 * Update conda
 * Make sure everythings works
 
@@ -358,7 +359,8 @@ conda list
 anaconda-navigator 
 ```
 
-* Don't use base virtual environment. Use your own
+* Don't use "base" virtual environment
+* Create and use your own
 
 ```
 conda create --name env1 python=3.11.5
@@ -370,7 +372,7 @@ conda activate base
 conda remove --name env1 --all 
 ```
 
-* If the display of the current conda virtual env does'nt fit the Oh my Posh prompt try this or modify the theme.
+* If the display of the current conda virtual env does'nt fit the Oh my Posh prompt try this or modify the Oh my Posh theme
 
 ```  
 conda config --set changeps1 False 
