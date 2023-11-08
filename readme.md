@@ -359,7 +359,7 @@ sudo apt install eza
 ## cat -> bat 
 
 ```
-apt install bat -y 
+sudo apt install bat -y 
 
 mkdir -p ~/.local/bin
 ln -s /usr/bin/batcat ~/.local/bin/bat
@@ -369,14 +369,24 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"  # once satisfied, add the lin
 * https://github.com/sharkdp/bat
 * https://www.linode.com/docs/guides/how-to-install-and-use-the-bat-command-on-linux/
 
+
+
+## top -> btop
+
+```
+sudo apt install btop -y 
+```
+* Once on screen strike "m" for menu, visit the help and options
+* Watch : https://youtu.be/ghWECXWi9kU?si=MNThwKisHp2yfTD7&t=170
+
+
+
 ## Others
 
 * du -> dust : https://github.com/ibraheemdev/modern-unix
 * df -> duf : https://github.com/muesli/duf
 * find -> fd : https://github.com/sharkdp/fd
 * grep -> ripgrep : https://github.com/BurntSushi/ripgrep
-* top -> bottom : https://github.com/ClementTsang/bottom
-* top -> glances : https://github.com/nicolargo/glances
 * ps -> procs : https://github.com/dalance/procs
 
 More
