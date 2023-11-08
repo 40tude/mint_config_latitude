@@ -377,8 +377,19 @@ conda config --set changeps1 False
 ```
 
 
+
+
+
 <!-- ##################################################### -->
 # Modern Linux
+
+## In addition to man
+```
+sudo apt install tldr -y
+tldr --update
+tldr wget
+```
+
 
 * https://www.oreilly.com/library/view/learning-modern-linux/9781098108939/
 
