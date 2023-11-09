@@ -386,6 +386,8 @@ conda config --set changeps1 False
 # Modern Linux
 
 ## In addition to man
+* Too Long, Did'nt Read
+  
 ```
 sudo apt install tldr -y
 tldr --update
