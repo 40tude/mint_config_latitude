@@ -301,7 +301,14 @@ sudo apt install powershell -y
 
 pwsh
 Update-Help
+exit
 ```
+To use PowerShell rather than bash
+```
+cat /etc/shells
+chsh -s /usr/bin/pwsh
+```
+
 
 
 
