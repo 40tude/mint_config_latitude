@@ -350,6 +350,23 @@ sudo apt update
 sudo apt install google-chrome-stable -y
 ```
 
+<!-- ##################################################### -->
+# Create a shortcut keys to launch an app 
+
+* `CTRL+ALT+T` already exists for terminal
+* You want to add, `CTRL+ALT+G` for Google Chrome 
+
+1. WIN key, find the app icon, right click, select "Add to Desktop"
+1. WIN + D, right click the icon, select "Properties"
+1. Basic Tab, copy the content of "Command TextBox"
+1. WIN key, launch the Keyboard app, in the top of the GUI, click the "Shortcuts" tab 
+1. Bottom of the GUI, press "Add custom shortcuts"
+1. Add the name of the app, paste the command, click "Add"
+1. In the "key shortcuts" list, select one of the unasigned entry, press the keys (CTRL + ALT + G for example)
+1. You can then test the shortcut right away
+1. Once satisfied, close the Keyboard app
+1. WIN + D, deleted the icon of the app from the Desktop
+
 
 
 
