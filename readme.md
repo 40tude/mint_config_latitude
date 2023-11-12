@@ -483,7 +483,7 @@ conda config --set changeps1 False
 
 
 <!-- ##################################################### -->
-# Modern Linux
+# "Modern" Linux
 
 ## In addition to man
 * Too Long, Did'nt Read
@@ -550,13 +550,33 @@ More
 
 
 <!-- ##################################################### -->
+# Create some alias
+
+* Edit `~/.bashrc` and, at the very end, add the following : 
+
+```
+    if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+    fi
+```
+
+* Create `~/.bash_aliases` and edit it as follow (see previous section for `eza` and `bat`)
+
+```
+alias ls='eza -al'
+alias cat='bat'
+```
+
+
+
+<!-- ##################################################### -->
 # Because I can't remember
 
 ## Change Cursor
 * Thèmes/Para avancés.../Souris/Yaru
 
 ## Symbolic links
-* Avoid relative path
+* Avoid relative paths
 
 ```
 ln -s /home/share/installation.md ln_installation.md           # create link in current dir
