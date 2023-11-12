@@ -1,10 +1,15 @@
 # Installation
-* Boot sur clé USB
-* Passer en clavier FR
-* `gparted` pour supprimer toutes les partitions
-* Installation de mint
+* Boot with USB key
+* Swith the keyboard to FR
+* `gparted` to delete partitions
+* Mint installation
 * Reboot
-* Read: https://github.com/40tude/mint_config_latitude
+
+## Read
+* https://github.com/40tude/mint_config_latitude
+
+
+
 
 <!-- ##################################################### -->
 # Update & upgrade
@@ -14,6 +19,8 @@ sudo apt update
 sudo apt dist-upgrade
 sudo apt upgrade
 ```
+
+
 
 
 <!-- ##################################################### -->
@@ -33,8 +40,8 @@ dpkg-reconfigure --priority=low unattended-upgrades
 
 
 ```
-free -h                                 # noter la taille de la RAM
-swapon                                  # faut swap = RAM
+free -h                                 # note the size of RAM
+swapon                                  # we will use swap = RAM
 sudo swapoff -a
 
 SIZE=16                                 # 16 MB
@@ -75,9 +82,7 @@ busctl call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login
 
 
 <!-- ##################################################### -->
-# Share a public folder with Windows 
-
-* Read : https://techviewleo.com/configure-samba-file-sharing-on-linux-mint/
+# Share a public directory with Windows 
 
 ```
 sudo apt install samba -y
@@ -87,15 +92,19 @@ sudo mkdir -p /home/public
 sudo chmod 777 /home/public
 sudo nano /etc/samba/smb.conf
 ```
+* Comment the 2 lines below (I use to add a TAG "Philippe" to track my modifications)
 
 ```
-# Philippe : comment the 2 lines
+# Philippe
 # interfaces = 127.0.0.0/8 eth0
 # bind interfaces only = yes
+```
 
-# Before ### Debugging/Accounting ###
+* Before "### Debugging/Accounting ###" add the folowing
+
+```
 # Philippe
-   server min protocol = NT1
+   server min protocol = SMB3
    ntlm auth = yes
    unix charset = UTF-8
    # Disable printer
@@ -103,8 +112,11 @@ sudo nano /etc/samba/smb.conf
    printing = bsd
    printcap name = /dev/null
    disable spoolss = yes
+```
 
-# End of the file add the lines below
+* At the end of the file add the lines below
+
+```
 # Philippe
 [Docs]
    path = /home/public
@@ -122,6 +134,87 @@ sudo systemctl restart smbd
 sudo ufw allow samba
 ```
 
+* Read : https://techviewleo.com/configure-samba-file-sharing-on-linux-mint/
+
+
+
+<!-- ##################################################### -->
+# Access the Public shared directory on a WIN 11 host
+
+## WIN11 host
+1. You have a Public shared directory that you can access from another WIN client. [Read this page](https://www.40tude.fr/shared-folder-in-local-network/) if needed.
+1. WIN + i, Accounts, Connexion Options
+1. Deselect the option "Only Hello...". 
+
+<img src="assets/options_connexion.png" width="700">
+
+## LINUX host
+
+```
+sudo apt smbclient
+sudo nano /etc/samba/smb.conf 
+```
+
+* Modify smb.conf (re-read the "Share a public directory with Window" section if needed)
+
+```
+# Philippe
+server min protocol = SMB3
+client min protocol = SMB3       # = NT1 if your internet box requires it
+
+```
+
+* Save & exit
+
+```
+sudo systemctl restart smbd	
+```
+
+* You use your Microsoft credentials : `E-mail` and `Microsoft account password`
+
+## CLI
+* 192.168.1.49 is the WIN11 host ip address 
+
+```
+smbclient -L 192.168.1.49 -U philippe.XXX@YYY
+Password for [philippe.XXX@YYY]:
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	ADMIN$          Disk      Administration à distance
+	C$              Disk      Partage par défaut
+	IPC$            IPC       IPC distant
+	Users           Disk
+Reconnecting with SMB1 for workgroup listing.
+do_connect: Connection to 192.168.1.49 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+Unable to connect with SMB1 -- no workgroup available
+```
+
+
+```
+smbclient -U philippe.XXX@YYY //192.168.1.49/Users
+Password for [philippe.XXX@YYY]:
+Try "help" to get a list of possible commands.
+smb: \> ls
+  .                                  DR        0  Sat Nov  4 15:38:20 2023
+  ..                                DHS        0  Fri Nov 10 11:03:46 2023
+  Default                           DHR        0  Sat Nov  4 17:57:30 2023
+  desktop.ini                       AHS      174  Sat May  7 07:22:32 2022
+  phili                               D        0  Fri Nov 10 11:03:49 2023
+  Public                             DR        0  Sat Nov  4 15:29:17 2023
+
+		249823487 blocks of size 4096. 225382835 blocks available
+```
+## GUI
+<img src="assets/Capture d’écran LINUX du 2023-11-12 00-42-44.png" width="700">
+
+
+## Read 
+* https://www.40tude.fr/shared-folder-in-local-network/
+* https://losst.pro/en/how-to-access-windows-share-in-linux
+* https://forum.manjaro.org/t/access-windows-11-shared-folder-from-manjaro-kde-linux/113213/5
+* https://www.malekal.com/comment-utiliser-smbclient-exemples/
+* https://4sysops.com/archives/the-smb-protocol-all-you-need-to-know/
 
 
 
