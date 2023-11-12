@@ -590,34 +590,3 @@ ln -s /home/share/mydoc.md /home/philippe/Bureau/ln_mydoc.md   # create link on 
 
 
 <!-- ##################################################### -->
-
-<!-- 
-
-
-
-
-* zfish (bash) : https://azlinux.fr/installer-fish-shell/
-* ripgrep (rg, grep) apt install -y ripgrep
-
-* Alacritty (terminal)
-  * Configuration Alacritty
-    * Configurer Alacritty pour utiliser Meslo
-    * Nov 2023 - Je suis en version 0.13.0-dev
-    * Le fichier .toml n''est pas pris en compte
-    * Le fichier .yml est pris en compte
-    * mkdir -p ~/.config/alacritty/
-    * /home/philippe/.config/alacritty/alacritty.toml
-    * /home/philippe/.config/alacritty/alacritty.yml
-  * Lire : 
-  * https://github.com/tmcdonell/config-alacritty/blob/master/alacritty.yml
-  * https://github.com/alacritty/alacritty/blob/master/extra/man/alacritty.5.scd
-  * https://github.com/alacritty/alacritty-theme
-  * Exemple de fichier .toml
-    ```
-    [font]
-    size = 16.0
-    # [font.normal]
-    # family = "MesloLGM Nerd Font"
-      ``` 
--->
-
