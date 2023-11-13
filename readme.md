@@ -285,7 +285,7 @@ curl -s https://ohmyposh.dev/install.sh | sudo bash -s
 * Update terminal preferences and use `MesloLGM Nerd Font`
 * Not specific to the font :
   * Font size = 11
-  * Windows size = 144 x 44 
+  * Windows size = 144 x 34 
 
 ```
 oh-my-posh get shell
