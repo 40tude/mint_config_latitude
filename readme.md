@@ -439,7 +439,12 @@ chsh -s /usr/bin/pwsh
 
 ```
 sudo apt install docker docker-compose docker-doc docker-registry docker.io -y
+sudo groupadd -f docker 
 sudo usermod -aG docker $USER
+newgrp docker
+sudo systemctl restart docker
+docker image ls
+docekr --version
 docker --help
 ```
 
