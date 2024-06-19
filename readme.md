@@ -265,7 +265,7 @@ git config --list
 cd ~/Téléchargements
 unzip Meslo.zip -d ./Meslo
 rm ./Meslo/LICENCE.txt
-rm ./Meslo/readme.md
+rm ./Meslo/README.md
 mkdir -p ~/.local/share/fonts
 mv ./Téléchargements/Meslo ~/.local/share/fonts
 fc-cache -fv
